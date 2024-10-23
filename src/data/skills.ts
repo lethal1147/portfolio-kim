@@ -1,0 +1,131 @@
+import { SkillType } from "@/types/skillSection";
+
+export const STARTER_ANIMATION_SKILLS = [
+  [
+    "/images/skills/docker.png",
+    "/images/skills/css.webp",
+    "/images/skills/express.png",
+    "/images/skills/golang.png",
+    "/images/skills/graphQl.png",
+    "/images/skills/html.png",
+    "/images/skills/javascript.png",
+    "/images/skills/mongodb.png",
+  ],
+  [
+    "/images/skills/graphQl.png",
+    "/images/skills/html.png",
+    "/images/skills/javascript.png",
+    "/images/skills/mongodb.png",
+    "/images/skills/nestjs.png",
+    "/images/skills/nextjs.png",
+    "/images/skills/nodejs.png",
+    "/images/skills/postgresql.png",
+  ],
+  [
+    "/images/skills/nestjs.png",
+    "/images/skills/nextjs.png",
+    "/images/skills/nodejs.png",
+    "/images/skills/postgresql.png",
+    "/images/skills/prisma.png",
+    "/images/skills/react.webp",
+    "/images/skills/tailwindcss.png",
+    "/images/skills/typescript.png",
+  ],
+  [
+    "/images/skills/prisma.png",
+    "/images/skills/react.webp",
+    "/images/skills/tailwindcss.png",
+    "/images/skills/typescript.png",
+    "/images/skills/docker.png",
+    "/images/skills/css.webp",
+    "/images/skills/express.png",
+    "/images/skills/golang.png",
+  ],
+];
+
+export const CAROUSEL_SKILLS: SkillType[] = [
+  {
+    skill: "HTML",
+    level: 90,
+    levelDesc: "Professional",
+    skillImage: "/images/skills/html.png",
+  },
+  {
+    skill: "CSS",
+    level: 85,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/css.webp",
+  },
+  {
+    skill: "Javascript",
+    level: 90,
+    levelDesc: "Professional",
+    skillImage: "/images/skills/javascript.png",
+  },
+  {
+    skill: "React",
+    level: 90,
+    levelDesc: "Professional",
+    skillImage: "/images/skills/react.webp",
+  },
+  {
+    skill: "Next.JS",
+    level: 75,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/nextjs.png",
+  },
+  {
+    skill: "Angular",
+    level: 30,
+    levelDesc: "Beginner",
+    skillImage: "/images/skills/angular.png",
+  },
+  {
+    skill: "Node.JS",
+    level: 80,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/nodejs.png",
+  },
+  {
+    skill: "Go",
+    level: 30,
+    levelDesc: "Beginner",
+    skillImage: "/images/skills/golang.png",
+  },
+  {
+    skill: "Express.JS",
+    level: 90,
+    levelDesc: "Professional",
+    skillImage: "/images/skills/express.png",
+  },
+  {
+    skill: "Nest.JS",
+    level: 30,
+    levelDesc: "Beginner",
+    skillImage: "/images/skills/nestjs-white.png",
+  },
+  {
+    skill: "GraphQL",
+    level: 30,
+    levelDesc: "Beginner",
+    skillImage: "/images/skills/graphQl.png",
+  },
+  {
+    skill: "PostgresQL",
+    level: 60,
+    levelDesc: "Intermediate",
+    skillImage: "/images/skills/postgresql.png",
+  },
+  {
+    skill: "MongoDB",
+    level: 80,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/mongodb.png",
+  },
+  {
+    skill: "Prisma",
+    level: 60,
+    levelDesc: "Intermediate",
+    skillImage: "/images/skills/prisma.png",
+  },
+];
