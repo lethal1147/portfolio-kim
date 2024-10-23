@@ -96,7 +96,8 @@ export default function ProjectSection() {
             <div className="col-span-3 flex justify-center items-center size-full">
               <div className="flex flex-col items-center gap-3 text-gray-400">
                 <p className="text-xl font-bold">
-                  No screenshots for this project because of confidential
+                  No screenshots available for this project due to
+                  confidentiality.
                 </p>
                 <FaLock />
               </div>
