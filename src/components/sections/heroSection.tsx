@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Button } from "../ui/button";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import HoverContainer from "../common/hoverContainer";
 
 export default function HeroSection() {
@@ -31,11 +30,11 @@ export default function HeroSection() {
         <p className="text-3xl">
           I&apos;m a <span className="text-red-main">Full Stack Developer</span>{" "}
           skilled in
-          <span className="text-red-main">React</span>,{" "}
+          <span className="text-red-main"> React</span>,{" "}
           <span className="text-red-main">NextJS</span>,{" "}
           <span className="text-red-main">JavaScript</span>,{" "}
           <span className="text-red-main">TypeScript</span> and basic on{" "}
-          <span className="text-red-main">Golang</span>.I work with agile
+          <span className="text-red-main">Golang</span>. I work with agile
           methodology.
         </p>
         <p className="text-3xl">Let&apos;s create something great together!</p>

@@ -81,6 +81,12 @@ export const CAROUSEL_SKILLS: SkillType[] = [
     skillImage: "/images/skills/angular.png",
   },
   {
+    skill: "TailwindCSS",
+    level: 70,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/tailwindcss.png",
+  },
+  {
     skill: "Node.JS",
     level: 80,
     levelDesc: "Advanced",
@@ -127,5 +133,11 @@ export const CAROUSEL_SKILLS: SkillType[] = [
     level: 60,
     levelDesc: "Intermediate",
     skillImage: "/images/skills/prisma.png",
+  },
+  {
+    skill: "Docker",
+    level: 60,
+    levelDesc: "Intermediate",
+    skillImage: "/images/skills/docker.png",
   },
 ];
