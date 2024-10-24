@@ -63,19 +63,20 @@ export default function NavBar() {
     <header
       ref={headerRef}
       id="header"
-      className={cn("flex px-5 py-3 bg-transparent", {
+      className={cn("flex px-5 py-1 md:py-3 bg-transparent", {
         "sticky top-0 z-20": isActive,
       })}
     >
-      <nav className="flex justify-between items-center w-full">
-        <div className="flex gap-3 items-center">
+      <nav className="flex justify-center sm:justify-between items-center w-full">
+        <div className="hidden sm:flex gap-3 items-center ">
           <Image
             height={64}
             width={64}
             src="/images/code-icon-light.png"
             alt="code-icon"
+            className=""
           />
-          <div className="glitch-wrapper">
+          <div className="glitch-wrapper !hidden md:!flex">
             <p className="glitch" data-glitch="Joakim Dahlstrom">
               Joakim Dahlstrom
             </p>

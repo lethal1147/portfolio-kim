@@ -24,10 +24,17 @@ export default function SkillsSection() {
   const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
 
   return (
-    <section id="skills" className="mx-40 my-20 pt-20">
+    <section
+      id="skills"
+      className="mx-5 px-8 sm:px-0 lg:mx-40 my-0 lg:my-20 pt-0 lg:pt-20"
+    >
       <div className="my-10 text-center">
-        <h2 className="text-6xl font-bold text-red-main">My Skills</h2>
-        <p className="text-3xl">Here are my expertises I have learned.</p>
+        <h2 className="text-3xl lg:text-6xl font-bold text-red-main">
+          My Skills
+        </h2>
+        <p className="text-xl lg:text-3xl">
+          Here are my expertises I have learned.
+        </p>
       </div>
 
       <Carousel
@@ -41,7 +48,7 @@ export default function SkillsSection() {
         <CarouselContent>
           {CAROUSEL_SKILLS.map((skill) => (
             <CarouselItem
-              className="basis-1/4 justify-center flex"
+              className="sm:max-w-64 lg:basis-1/4 justify-center flex"
               key={skill.skill}
             >
               <Card className="w-4/5 overflow-hidden">

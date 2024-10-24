@@ -7,14 +7,14 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-section grid grid-cols-3 gap-5 mx-auto my-56 w-[1150px]"
+      className="hero-section grid grid-cols-1 lg:grid-cols-3 gap-5 mx-6 sm:mx-20 xl:mx-auto my-20 lg:my-56 max-w-[1150px]"
     >
-      <div className="col-span-2 flex flex-col gap-7 font-semibold">
-        <h1 className="text-5xl">
+      <div className="col-span-1 text-center lg:text-start lg:col-span-2 order-2 lg:order-1 flex flex-col gap-7 font-semibold">
+        <h1 className="text-3xl lg:text-5xl">
           Hello, I am{" "}
           <span className="text-red-main font-bold">Joakim Dahlstrom</span>
         </h1>
-        <p className="text-3xl">
+        <p className="text-xl lg:text-3xl">
           I&apos;m a <span className="text-red-main">Full Stack Developer</span>{" "}
           skilled in
           <span className="text-red-main"> React</span>,{" "}
@@ -24,11 +24,13 @@ export default function HeroSection() {
           <span className="text-red-main">Golang</span>. I work with agile
           methodology.
         </p>
-        <p className="text-3xl">Let&apos;s create something great together!</p>
+        <p className="text-xl lg:text-3xl">
+          Let&apos;s create something great together!
+        </p>
 
         <div className="flex flex-col gap-1">
           <p>Contact me</p>
-          <div className="flex gap-10">
+          <div className="flex items-center flex-col lg:flex-row gap-5 lg:gap-10">
             <div className="flex gap-3 text-lg">
               <Button
                 asChild
@@ -80,7 +82,10 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <Button asChild className="font-bold max-w-40">
+        <Button
+          asChild
+          className="font-bold max-w-40 self-center lg:self-start"
+        >
           <a
             href="https://drive.google.com/file/d/1SHBp79ZpdqY75ZHtJgS982S6PDQqppr4/view?usp=sharing"
             target="_blank"
@@ -89,12 +94,16 @@ export default function HeroSection() {
           </a>
         </Button>
       </div>
-      <HoverContainer
-        width={350}
-        height={350}
-        imageAlt="joakim dahlstrom"
-        imagePath="/images/profile-image.jpg"
-      />
+
+      <div className="col-span-1 order-1 lg:order-2 flex justify-center">
+        <div></div>
+        <HoverContainer
+          width={350}
+          height={350}
+          imageAlt="joakim dahlstrom"
+          imagePath="/images/profile-image.jpg"
+        />
+      </div>
     </section>
   );
 }

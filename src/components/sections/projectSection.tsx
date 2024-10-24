@@ -17,17 +17,22 @@ export default function ProjectSection() {
   );
 
   return (
-    <section id="projects" className="mx-40 my-20 pt-20">
+    <section
+      id="projects"
+      className="mx-5 px-8 sm:px-0 lg:mx-40 mb-10 my-0 lg:my-20 pt-0 lg:pt-20"
+    >
       <div className="my-10 text-center">
-        <h2 className="text-6xl font-bold text-red-main">My Projects</h2>
-        <p className="text-3xl">
+        <h2 className="text-3xl lg:text-6xl font-bold text-red-main">
+          My Projects
+        </h2>
+        <p className="text-xl lg:text-3xl">
           Check out my personal projects that I built for self-use and learning!
         </p>
       </div>
 
       <div className="grid grid-cols-3 gap-10">
         {/* Project list */}
-        <ScrollArea className="min-h-[600px] col-span-1 project-container-wrapper">
+        <ScrollArea className="max-h-[250px] lg:min-h-[600px] col-span-3 lg:col-span-1 project-container-wrapper">
           <h3 className="text-center font-bold text-3xl py-5 underline text-red-main">
             List of my project!
           </h3>
@@ -54,8 +59,8 @@ export default function ProjectSection() {
         </ScrollArea>
 
         {/* Project detail */}
-        <div className="col-span-2 gap-5 project-container-wrapper grid grid-cols-5">
-          <div className="col-span-2 flex flex-col gap-5 text-gray-500 font-semibold border-r">
+        <div className="col-span-3 lg:col-span-2 gap-5 project-container-wrapper grid grid-cols-5">
+          <div className="col-span-5 lg:col-span-2 flex flex-col gap-5 text-gray-500 font-semibold border-none lg:border-r">
             <h4 className="font-bold text-2xl text-red-main ">
               {selectedProject.name}
             </h4>
@@ -95,9 +100,9 @@ export default function ProjectSection() {
           </div>
 
           {selectedProject.isCredential ? (
-            <div className="col-span-3 flex justify-center items-center size-full">
+            <div className="col-span-5 lg:col-span-3 flex justify-center items-center size-full">
               <div className="flex flex-col items-center gap-3 text-gray-400">
-                <p className="text-xl font-bold">
+                <p className="text-xl text-center lg:text-start font-bold">
                   No screenshots available for this project due to
                   confidentiality.
                 </p>
@@ -106,14 +111,14 @@ export default function ProjectSection() {
             </div>
           ) : (
             <div
-              className={cn("col-span-3 grid grid-cols-2 gap-5", {
+              className={cn("col-span-5 lg:col-span-3 grid grid-cols-2 gap-5", {
                 "grid-cols-1": selectedProject.screenshots.length <= 1,
               })}
             >
               {selectedProject.screenshots.map((screenshot) => (
                 <Dialog key={screenshot.alt}>
                   <DialogTrigger asChild>
-                    <div className="relative border shadow-lg w-full overflow-hidden rounded-lg cursor-pointer">
+                    <div className="relative border shadow-lg w-full min-h-56 overflow-hidden rounded-lg cursor-pointer">
                       <Image
                         src={screenshot.path}
                         alt={screenshot.alt}
