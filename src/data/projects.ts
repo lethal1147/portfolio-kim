@@ -178,6 +178,8 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "Express",
       "MicrosoftSQL",
       "JWT",
+      "Zustand",
+      "Ant-Design",
     ],
     screenshots: [],
     isCredential: true,

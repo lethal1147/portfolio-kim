@@ -74,22 +74,24 @@ export default function ProjectSection() {
                 ))}
               </div>
             </div>
-            <div className="flex w-full gap-5 justify-center">
-              <Button
-                disabled={!selectedProject.github}
-                variant="outline"
-                className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
-              >
-                Github
-              </Button>
-              <Button
-                disabled={!selectedProject.demo}
-                variant="outline"
-                className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
-              >
-                Demo
-              </Button>
-            </div>
+            {!selectedProject.isCredential && (
+              <div className="flex w-full gap-5 justify-center">
+                <Button
+                  disabled={!selectedProject.github}
+                  variant="outline"
+                  className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
+                >
+                  Github
+                </Button>
+                <Button
+                  disabled={!selectedProject.demo}
+                  variant="outline"
+                  className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
+                >
+                  Demo
+                </Button>
+              </div>
+            )}
           </div>
 
           {selectedProject.isCredential ? (
