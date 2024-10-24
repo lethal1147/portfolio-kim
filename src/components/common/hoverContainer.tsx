@@ -45,18 +45,18 @@ export default function HoverContainer({
   useEffect(() => {
     const currentRef = imageRef.current;
     if (currentRef) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       currentRef.addEventListener("mousemove", handleMouseMove as any);
       currentRef.addEventListener("mouseleave", handleMouseLeave);
     }
     return () => {
       if (currentRef) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         currentRef.removeEventListener("mousemove", handleMouseMove as any);
         currentRef.removeEventListener("mouseleave", handleMouseLeave);
       }
     };
   }, []);
-
-  console.log(tiltStyle);
 
   return (
     <div

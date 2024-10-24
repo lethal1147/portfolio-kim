@@ -1,25 +1,12 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import { Button } from "../ui/button";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import HoverContainer from "../common/hoverContainer";
 
 export default function HeroSection() {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    gsap.from(heroRef.current, {
-      duration: 1.5,
-      opacity: 1,
-      y: -100,
-      ease: "power2.out",
-    });
-  }, []);
   return (
     <section
-      ref={heroRef}
+      id="hero"
       className="hero-section grid grid-cols-3 gap-5 mx-auto my-56 w-[1150px]"
     >
       <div className="col-span-2 flex flex-col gap-7 font-semibold">
@@ -39,30 +26,68 @@ export default function HeroSection() {
         </p>
         <p className="text-3xl">Let&apos;s create something great together!</p>
 
-        <div className="flex gap-5 text-3xl">
-          <a
-            className="hover:text-red-main transition"
-            href="https://www.linkedin.com/in/joakim-dahlstrom-250303264/"
-            target="_blank"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            className="hover:text-red-main transition"
-            href="https://github.com/lethal1147"
-            target="_blank"
-          >
-            <FaGithub />
-          </a>
-          <a
-            className="hover:text-red-main transition"
-            href="https://www.facebook.com/uykim.kim/"
-            target="_blank"
-          >
-            <FaFacebook />
-          </a>
+        <div className="flex flex-col gap-1">
+          <p>Contact me</p>
+          <div className="flex gap-10">
+            <div className="flex gap-3 text-lg">
+              <Button
+                asChild
+                variant="link"
+                className="px-0 text-white hover:text-red-main cursor-pointer"
+              >
+                <a href="tel:0882882572" className="flex items-center gap-3">
+                  <FaPhoneAlt />
+                  088-288-2572
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="link"
+                className="px-0 text-white hover:text-red-main cursor-pointer"
+              >
+                <a
+                  target="_blank"
+                  href="mailto:joakim.n.dahlstrom@gmail.com"
+                  className="flex items-center gap-3"
+                >
+                  <MdEmail />
+                  joakim.n.dahlstrom@gmail.com
+                </a>
+              </Button>
+            </div>
+            <div className="flex gap-5 text-3xl">
+              <a
+                className="hover:text-red-main transition"
+                href="https://www.linkedin.com/in/joakim-dahlstrom-250303264/"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                className="hover:text-red-main transition"
+                href="https://github.com/lethal1147"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
+              <a
+                className="hover:text-red-main transition"
+                href="https://www.facebook.com/uykim.kim/"
+                target="_blank"
+              >
+                <FaFacebook />
+              </a>
+            </div>
+          </div>
         </div>
-        <Button className="font-bold max-w-40">My resume</Button>
+        <Button asChild className="font-bold max-w-40">
+          <a
+            href="https://drive.google.com/file/d/1SHBp79ZpdqY75ZHtJgS982S6PDQqppr4/view?usp=sharing"
+            target="_blank"
+          >
+            My resume!
+          </a>
+        </Button>
       </div>
       <HoverContainer
         width={350}

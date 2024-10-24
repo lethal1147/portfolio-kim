@@ -77,6 +77,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
     description: `Working on a new version of my portfolio, styled like a Windows desktop. You can open up project showcases in folders, just like you would on a real desktop!`,
     tags: [
       "Next.JS",
+      "Typescript",
       "Jest",
       "TailwindCSS",
       "shadcn/ui",
@@ -137,6 +138,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "mongoose",
       "cron-job",
       "JWT",
+      "Docker",
     ],
     screenshots: [],
     github: "",
@@ -159,6 +161,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "mongoose",
       "cron-job",
       "JWT",
+      "Docker",
     ],
     screenshots: [],
     github: "",

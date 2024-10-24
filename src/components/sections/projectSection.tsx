@@ -17,7 +17,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section className="mx-40 my-20 pt-20">
+    <section id="projects" className="mx-40 my-20 pt-20">
       <div className="my-10 text-center">
         <h2 className="text-6xl font-bold text-red-main">My Projects</h2>
         <p className="text-3xl">

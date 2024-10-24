@@ -24,7 +24,7 @@ export default function SkillsSection() {
   const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
 
   return (
-    <section className="mx-40 my-20 pt-20">
+    <section id="skills" className="mx-40 my-20 pt-20">
       <div className="my-10 text-center">
         <h2 className="text-6xl font-bold text-red-main">My Skills</h2>
         <p className="text-3xl">Here are my expertises I have learned.</p>

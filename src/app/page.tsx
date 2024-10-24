@@ -1,6 +1,5 @@
 "use client";
 
-import NavBar from "@/components/common/navBar";
 import StarterAnimation from "@/components/common/starterAnimation";
 import HeroSection from "@/components/sections/heroSection";
 import ProjectSection from "@/components/sections/projectSection";
@@ -15,11 +14,10 @@ export default function Home() {
   };
 
   return (
-    <main className="base-background-color max-w-screen text-gray-300 overflow-hidden snap-y">
+    <main className="">
       {!isAnimationComplete && (
         <StarterAnimation onAnimationComplete={handleAnimationComplete} />
       )}
-      <NavBar />
       <HeroSection />
       <SkillsSection />
       <ProjectSection />
