@@ -103,7 +103,11 @@ export default function ProjectSection() {
               </div>
             </div>
           ) : (
-            <div className="col-span-3 grid-rows-2 grid grid-cols-2 gap-5">
+            <div
+              className={cn("col-span-3 grid grid-cols-2 gap-5", {
+                "grid-cols-1": selectedProject.screenshots.length <= 1,
+              })}
+            >
               {selectedProject.screenshots.map((screenshot) => (
                 <Dialog key={screenshot.alt}>
                   <DialogTrigger asChild>
