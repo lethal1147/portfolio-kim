@@ -63,6 +63,12 @@ export const CAROUSEL_SKILLS: SkillType[] = [
     skillImage: "/images/skills/javascript.png",
   },
   {
+    skill: "Typescript",
+    level: 80,
+    levelDesc: "Advanced",
+    skillImage: "/images/skills/typescript.png",
+  },
+  {
     skill: "React",
     level: 90,
     levelDesc: "Professional",
