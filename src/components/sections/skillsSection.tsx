@@ -48,7 +48,7 @@ export default function SkillsSection() {
         <CarouselContent>
           {CAROUSEL_SKILLS.map((skill) => (
             <CarouselItem
-              className="sm:max-w-64 lg:basis-1/4 justify-center flex"
+              className="max-w-64 lg:max-w-full lg:basis-1/4 justify-center flex"
               key={skill.skill}
             >
               <Card className="w-4/5 overflow-hidden">
@@ -63,7 +63,7 @@ export default function SkillsSection() {
                     </p>
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex justify-center bg-red-main max-h-60 h-60 p-3">
+                <CardContent className="flex items-center justify-center bg-red-main max-h-60 h-60 p-3">
                   <Image
                     width={250}
                     height={250}
