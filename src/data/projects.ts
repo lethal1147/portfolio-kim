@@ -25,6 +25,8 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "Prisma",
       "Zustand",
       "Cloudinary",
+      "openai SDK",
+      "azure-form-recognizer"
     ],
     screenshots: [
       { path: `${BASE_IMAGE_PATH}${LEDGAR_PATH}/login.png`, alt: "login page" },
