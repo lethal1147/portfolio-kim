@@ -19,8 +19,8 @@ export default function Home() {
         <StarterAnimation onAnimationComplete={handleAnimationComplete} />
       )}
       <HeroSection />
-      <SkillsSection />
       <ProjectSection />
+      <SkillsSection />
     </main>
   );
 }

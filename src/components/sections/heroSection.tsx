@@ -87,7 +87,8 @@ export default function HeroSection() {
           className="font-bold max-w-40 self-center lg:self-start"
         >
           <a
-            href="https://drive.google.com/file/d/1SHBp79ZpdqY75ZHtJgS982S6PDQqppr4/view?usp=sharing"
+            // href="https://drive.google.com/file/d/1SHBp79ZpdqY75ZHtJgS982S6PDQqppr4/view?usp=sharing" // Old version
+            href="https://drive.google.com/file/d/15gHErNy454FcI9JSLo5-qm-f7VXqCr95/view?usp=sharing" // New version
             target="_blank"
           >
             My resume!
