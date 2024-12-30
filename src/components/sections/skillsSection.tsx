@@ -26,7 +26,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="mx-5 px-8 sm:px-0 lg:mx-40 my-0 lg:my-20 pt-0 lg:pt-20"
+      className="mx-5 px-8 lg:mx-40 my-0 lg:my-20 pt-0 lg:pt-20"
     >
       <div className="my-10 text-center">
         <h2 className="text-3xl lg:text-6xl font-bold text-red-main">
@@ -48,7 +48,7 @@ export default function SkillsSection() {
         <CarouselContent>
           {CAROUSEL_SKILLS.map((skill) => (
             <CarouselItem
-              className="max-w-64 lg:max-w-full lg:basis-1/4 justify-center flex"
+              className="max-w-64 lg:max-w-full basis-1/2 md:basis-1/3 xl:basis-1/4 justify-center flex"
               key={skill.skill}
             >
               <Card className="w-4/5 overflow-hidden">
@@ -64,12 +64,16 @@ export default function SkillsSection() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center justify-center bg-red-main max-h-60 h-60 p-3">
-                  <Image
-                    width={250}
-                    height={250}
-                    src={skill.skillImage}
-                    alt={skill.skill}
-                  />
+                  <div className="size-full p-5 flex justify-center items-center">
+                    <Image
+                      className="size-full"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      src={skill.skillImage}
+                      alt={skill.skill}
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>

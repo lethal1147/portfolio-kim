@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { NAV_BAR_MENUS } from "@/data/common";
 
 export default function NavBar() {
   const [isActive, setIsActive] = useState(false);
@@ -83,22 +84,17 @@ export default function NavBar() {
           </div>
         </div>
         <ul className="flex gap-5 text-3xl">
-          <li
-            className={cn("transition-all", {
-              "hover:!text-red-main": isActive,
-              "hover:text-gray-400": !isActive,
-            })}
-          >
-            <a href="#skills">Skills</a>
-          </li>
-          <li
-            className={cn("transition-all", {
-              "hover:!text-red-main": isActive,
-              "hover:text-gray-400": !isActive,
-            })}
-          >
-            <a href="#projects">Projects</a>
-          </li>
+          {NAV_BAR_MENUS.map((menu) => (
+            <li
+              key={menu.title}
+              className={cn("transition-all", {
+                "hover:!text-red-main": isActive,
+                "hover:text-gray-400": !isActive,
+              })}
+            >
+              <a href={menu.href}>{menu.title}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
