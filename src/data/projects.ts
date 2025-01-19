@@ -26,7 +26,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "Zustand",
       "Cloudinary",
       "openai SDK",
-      "azure-form-recognizer"
+      "azure-form-recognizer",
     ],
     screenshots: [
       { path: `${BASE_IMAGE_PATH}${LEDGAR_PATH}/login.png`, alt: "login page" },
@@ -43,7 +43,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
         alt: "partypay page",
       },
     ],
-    github: "https://github.com/lethal1147/income-invoice",
+    github: { frontend: "https://github.com/lethal1147/income-invoice" },
     demo: "",
     status: "",
   },
@@ -57,7 +57,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "TailwindCSS",
       "Node.JS",
       "Express",
-      "stripe"
+      "stripe",
     ],
     screenshots: [
       {
@@ -73,7 +73,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
         alt: "Description view",
       },
     ],
-    github: "https://github.com/lethal1147/kim-store",
+    github: { frontend: "https://github.com/lethal1147/kim-store" },
     demo: "",
     status: "",
   },
@@ -103,18 +103,36 @@ export const PROJECTS_LISTS: ProjectsType[] = [
         alt: "desktop page",
       },
     ],
-    github: "https://github.com/lethal1147/portfolio2024",
+    github: { frontend: "https://github.com/lethal1147/portfolio2024" },
     demo: "",
     status: "(In Progress)",
   },
   {
     name: "Insider boardgame",
     description: `A web-based game inspired by the board game "Insider". It'll have real-time chat, a score system, and game settings.`,
-    tags: ["React", "Typescript", "Redux", "TailwindCSS", "shadcn/ui"],
+    tags: [
+      "React",
+      "Typescript",
+      "Redux toolkit",
+      "TailwindCSS",
+      "shadcn/ui",
+      "Socket.io",
+    ],
     screenshots: [
       { path: `${BASE_IMAGE_PATH}${INSIDER_PATH}/home.png`, alt: "home page" },
+      {
+        path: `${BASE_IMAGE_PATH}${INSIDER_PATH}/lobby.png`,
+        alt: "lobby page",
+      },
+      {
+        path: `${BASE_IMAGE_PATH}${INSIDER_PATH}/host.png`,
+        alt: "home form popup",
+      },
     ],
-    github: "https://github.com/lethal1147/insider",
+    github: {
+      frontend: "https://github.com/lethal1147/insider",
+      backend: "https://github.com/lethal1147/insider_be",
+    },
     demo: "",
     status: "(In Progress)",
   },
@@ -126,7 +144,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
     screenshots: [],
     isCredential: true,
     status: "(Confidential)",
-    github: "",
+    github: {},
     demo: "",
   },
   {
@@ -146,7 +164,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "Docker",
     ],
     screenshots: [],
-    github: "",
+    github: {},
     demo: "",
     isCredential: true,
     status: "(Confidential)",
@@ -173,7 +191,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
       "nginx",
     ],
     screenshots: [],
-    github: "",
+    github: {},
     demo: "",
     isCredential: true,
     status: "(Confidential)",
@@ -196,7 +214,7 @@ export const PROJECTS_LISTS: ProjectsType[] = [
     screenshots: [],
     isCredential: true,
     status: "(Confidential)",
-    github: "",
+    github: {},
     demo: "",
   },
 ];

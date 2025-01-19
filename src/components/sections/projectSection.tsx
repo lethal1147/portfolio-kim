@@ -81,13 +81,50 @@ export default function ProjectSection() {
             </div>
             {!selectedProject.isCredential && (
               <div className="flex w-full gap-5 justify-center">
-                <Button
-                  disabled={!selectedProject.github}
-                  variant="outline"
-                  className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
-                >
-                  Github
-                </Button>
+                {selectedProject.github?.frontend &&
+                selectedProject.github.backend ? (
+                  <>
+                    <Button
+                      disabled={!selectedProject.github.frontend}
+                      variant="outline"
+                      className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
+                    >
+                      <a
+                        target="_blank"
+                        href={selectedProject.github?.frontend}
+                      >
+                        Frontend
+                      </a>
+                    </Button>
+                    <Button
+                      disabled={!selectedProject.github.backend}
+                      variant="outline"
+                      className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
+                    >
+                      <a target="_blank" href={selectedProject.github?.backend}>
+                        Backend
+                      </a>
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    disabled={!selectedProject.github}
+                    variant="outline"
+                    className="font-bold border-red-main !text-red-main hover:bg-red-main/20"
+                  >
+                    <a
+                      target="_blank"
+                      href={
+                        selectedProject.github?.frontend ||
+                        selectedProject.github?.backend
+                      }
+                    >
+                      {selectedProject.github?.frontend
+                        ? "Frontend"
+                        : "Backend"}
+                    </a>
+                  </Button>
+                )}
                 <Button
                   disabled={!selectedProject.demo}
                   variant="outline"

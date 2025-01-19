@@ -8,7 +8,10 @@ export type ProjectsType = {
   description: string;
   tags: string[];
   screenshots: ProjectScreenshot[];
-  github: string;
+  github: {
+    frontend?: string;
+    backend?: string;
+  } | null;
   demo: string;
   isCredential?: boolean;
   status: string;
