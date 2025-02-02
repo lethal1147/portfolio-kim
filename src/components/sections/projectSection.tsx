@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ScrollArea } from "../ui/scroll-area";
 import { PROJECTS_LISTS } from "@/data/projects";
 import { ProjectsType } from "@/types/projectSection";
@@ -10,18 +10,82 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { FaLock } from "react-icons/fa";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectsType>(
     PROJECTS_LISTS[0]
   );
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const detailRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        listRef.current,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: listRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        detailRef.current,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: detailRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="projects"
       className="mx-5 px-8 sm:px-0 lg:mx-40 mb-10 my-0 lg:my-20 pt-0 lg:pt-20"
     >
-      <div className="my-10 text-center">
+      <div ref={titleRef} className="my-10 text-center">
         <h2 className="text-3xl lg:text-6xl font-bold text-red-main">
           My Projects
         </h2>
@@ -32,7 +96,10 @@ export default function ProjectSection() {
 
       <div className="grid grid-cols-3 gap-10">
         {/* Project list */}
-        <ScrollArea className="max-h-[250px] lg:min-h-[600px] col-span-3 lg:col-span-1 project-container-wrapper">
+        <ScrollArea
+          ref={listRef}
+          className="max-h-[250px] lg:min-h-[600px] col-span-3 lg:col-span-1 project-container-wrapper"
+        >
           <h3 className="text-center font-bold text-3xl py-5 underline text-red-main">
             List of my project!
           </h3>
@@ -59,7 +126,10 @@ export default function ProjectSection() {
         </ScrollArea>
 
         {/* Project detail */}
-        <div className="col-span-3 lg:col-span-2 gap-5 project-container-wrapper grid grid-cols-5">
+        <div
+          ref={detailRef}
+          className="col-span-3 lg:col-span-2 gap-5 project-container-wrapper grid grid-cols-5"
+        >
           <div className="col-span-5 lg:col-span-2 flex flex-col gap-5 text-gray-500 font-semibold border-none lg:border-r">
             <h4 className="font-bold text-2xl text-red-main ">
               {selectedProject.name}

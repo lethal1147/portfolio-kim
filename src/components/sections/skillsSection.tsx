@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -19,12 +19,59 @@ import { Progress } from "../ui/progress";
 import Image from "next/image";
 import { CAROUSEL_SKILLS } from "@/data/skills";
 import Autoplay from "embla-carousel-autoplay";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function SkillsSection() {
   const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current.querySelectorAll("h2, p"),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+
+    itemsRef.current.forEach((item, index) => {
+      if (!item) return;
+      gsap.fromTo(
+        item,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="skills"
       className="mx-5 px-8 lg:mx-40 my-0 lg:my-20 pt-0 lg:pt-20"
     >
@@ -46,8 +93,11 @@ export default function SkillsSection() {
         plugins={[plugin.current]}
       >
         <CarouselContent>
-          {CAROUSEL_SKILLS.map((skill) => (
+          {CAROUSEL_SKILLS.map((skill, index) => (
             <CarouselItem
+              ref={(el) => {
+                itemsRef.current[index] = el;
+              }}
               className="max-w-64 lg:max-w-full basis-1/2 md:basis-1/3 xl:basis-1/4 justify-center flex"
               key={skill.skill}
             >
