@@ -148,6 +148,31 @@ export const PROJECTS_LISTS: ProjectsType[] = [
     demo: "",
   },
   {
+    name: "Smart Purchase Order Management",
+    description:
+      "This is a smart purchase order system that handles everything related to invoices and expenses for customers. It includes a dashboard with a function to export Excel files for data analysis.",
+    tags: [
+      "React",
+      "Typescript",
+      "TailwindCSS",
+      "Shadcn/ui",
+      "Zod",
+      "React-hook-form",
+      "Zustand",
+      "Nest.JS",
+      "MySQL",
+      "Prisma",
+      "Docker",
+      "Passport",
+      "Excel.JS",
+    ],
+    screenshots: [],
+    github: {},
+    demo: "",
+    isCredential: true,
+    status: "(Confidential)",
+  },
+  {
     name: "CRM - Customer Relationship Management",
     description:
       "This is a CRM system I built on my own at my current job. I handled everything from gathering requirements, working with the UX/UI designer, and setting up the project. The system includes key features like issuing quotations, scheduling meeting appointments, and tracking sales orders, making it easier for our customer to manage thier customer interactions and sales pipelines efficiently.",
